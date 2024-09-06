@@ -62,7 +62,6 @@ class DNSRequestHandler(socketserver.BaseRequestHandler):
         print(f"Responded with NXDOMAIN for {qname}")
 
 class ThreadingHTTPServer(socketserver.ThreadingMixIn, http.server.HTTPServer):
-    """Обрабатывает каждый запрос в отдельном потоке."""
     daemon_threads = True
 
 # HTTPS Server
