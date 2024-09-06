@@ -1,0 +1,33 @@
+{
+    "enable_dns_server": false,
+    "enable_https_server": true,
+    "enable_http_server": true,
+    "server_address": "192.168.100.12",
+    "http_port": 8080,
+    "https_port": 8443,
+    "ssl_keyfile": "ssl/vidaahub.com.key",
+    "ssl_certfile": "ssl/vidaahub.com.crt",
+    "html_file": "index-en.html",
+    "dns_records": [
+        {
+            "hostname": "vidaahub.com",
+            "type": "A",
+            "address": "192.168.100.12"
+        },
+        {
+            "hostname": "ajax.googleapis.com",
+            "type": "A",
+            "address": "216.58.215.74"
+        },
+        {
+            "hostname": "ttv.w00t.fyi",
+            "type": "A",
+            "address": "188.114.96.11"
+        },
+        {
+            "hostname": "example.com",
+            "type": "AAAA",
+            "address": "2001:0db8::1"
+        }
+    ]
+}

@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Vidaa App Store</title> 
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+    <meta name="viewport" content="width=device-width, height=device-height">  
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.0/jquery.min.js"></script>  
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.9/jquery-ui.js"></script>
+<script type="text/javascript">  
+console.log("loaded");
+var cdn = 'https://ttv.w00t.fyi/store/img/';
+/*
+*  Feel free to add your custom HTML5 applications in the following format:
+*    appid:'appid'   - any unique ID of the application on your Vidaa device
+*    name:'name'     - name of the application on your Vidaa device. I suppose it also better to have it unique
+*    url:'http://'   - any website in the internet which supports Smart TV devices. Use HTTP or HTTPS (if supported by the website)
+*    text:'Application description' - Any text, description of the application
+*    category: 'category_name'      - Any category name.. or the tag. I use it only for grouping the applications. Wanted to customize this "store" and sort the applications using JS and category name.
+*/
+var apps = [
+/* Lampa and it's forks */
+	{category:'lampa',appid:'vidaa_lampa',name:'Lampa',url:'http://lampa.mx/',text:'Lampa.mx - Media catalog for Smart TV (https://github.com/yumata/lampa-source/)'},
+	{category:'lampa',appid:'vidaa_showy',name:'Showy',url:'https://showy.online/',text:'Showy - Alternative hosting of Lampa'},
+	{category:'lampa',appid:'vidaa_lampalite4',name:'Lampa lite',url:'http://lite.lampa.mx/',text:'Lampa Lite.mx, light version of Lampa'},
+	{category:'lampa',appid:'vidaa_prisma',name:'Prisma',url:'http://prisma.ws/',text:'Prisma - One more fork of Lampa'},
+/* Players */
+	{category:'players',appid:'vidaa_fxml',name:'Media Station X',url:'https://msx.benzac.de/foxxum.html',text:'Media Station X'},
+	{category:'players',appid:'vidaa_msx',name:'MSXPlayer',url:'https://msx.benzac.de/?welcome=menu:request:interaction:menu@http://plugins.msxplayer.ru/store.html',text:'MSX Player: TorrServer-client, FXML-browser, IPTV-player'},
+	{category:'players',appid:'vidaa_fork',name:'ForkPlayer',url:'http://browser.appfxml.com/',text:'ForkPlayer'},
+/* A few my favourite sites */
+	{category:'my',appid:'vidaa_windy',name:'Windy',url:'https://www.windy.com/',text:'Windy'},
+
+/* Players and Launchers */
+	{category:'players',appid:'vidaa_oneplayer',name:'Oneplayer',url:'http://webos.oneplayer.me/',text:'OnePlayer'},
+	{category:'players',appid:'vidaa_drmplay',name:'DRM-play',url:'http://drm-play.com',text:'OttPlayer drm-play mod'},
+	{category:'players',appid:'vidaa_ott',name:'OttPlayer',url:'http://widget.ottplayer.tv/operatv2/index.html',text:'OttPlayer'},
+	{category:'players',appid:'vidaa_ottold',name:'OttPlayerTest',url:'http://widget.ottplayer.tv/test/index.html',text:'OttPlayer - Test'},
+	{category:'players',appid:'vidaa_xsmart',name:'Xsmart',url:'http://app.xsmart.tv/?widg=5',text:'XSmart'},
+	{category:'players',appid:'vidaa_xsmartlite',name:'Xsmart classic',url:'http://app.xsmart.tv/?widg=lite',text:'XSmart Lite'},
+	{category:'players',appid:'vidaa_forkbeta',name:'ForkPlayer Beta',url:'http://browser.appinfo.su/',text:'ForkPlayer alternative'},
+	{category:'players',appid:'vidaa_clouddy',name:'ClouDDy',url:'http://player.clouddy.online/',text:'ClouDDy'},
+	{category:'players',appid:'vidaa_webvideocast2',name:'Web Video Cast',url:'http://vewd.webvideocaster.com/',text:'Web Video Cast'},
+/* Twitch an other "officially" supported applications by their vendors */
+	{category:'official',appid:'vidaa_twitch',name:'twitch',url:'https://hisense.tv.twitch.tv/',text:'Twitch'},
+	{category:'official',appid:'vidaa_vevo',name:'Vevo',url:'https://hisense.vevo.com',text:'Vevo'},
+	{category:'official',appid:'vidaa_emby',name:'Emby',url:'http://tv.emby.media/',text:'Emby - Media server and home cinema'},
+/* IPTV */	
+	{category:'iptv',appid:'vidaa_tvap',name:'TVap',url:'http://tvphone.site/',text:'TVap - IPTV player for Smart TV'},
+	{category:'iptv',appid:'vidaa_icva',name:'ICVA',url:'http://icva.mx/',text:'ICVA - IPTV player'},
+	{category:'iptv',appid:'vidaa_siptv',name:'Smart IPTV',url:'http://opera.siptv.eu',text:'Play IPTV streams, videos on your Smart TV'},
+/* Music */
+	{category:'music',appid:'vidaa_mytuner',name:'myTuner Radio',url:'https://devices.mytuner.mobi/?utm_source=Foxxum',text:'myTiner Radio - listen to 30 000 radio stations from 120 countries'},
+/* Regional */
+
+/* The next category - I wanted to install on my Hisense TV, but it doesn't support Smart TV :) 
+   Welcome to contribute!
+*/
+/*
+	{category:'my',appid:'vidaa_google_photo',name:'Google Photos',url:'https://photos.google.com/',text:'Google Photos'},
+	{category:'my',appid:'vidaa_acuweather',name:'Acuweather',url:'https://www.accuweather.com/',text:'AcuWeather'},
+	{category:'my',appid:'vidaa_yahoo_weather',name:'Yahoo! Weather',url:'https://www.yahoo.com/news/weather/',text:'Yahoo! Weather'},
+	{category:'music',appid:'vidaa_spotify',name:'Spotify',url:'https://open.spotify.com/',text:'Spotify'},
+*/
+];
+function installHisense(appid) {
+	$("#result").html("<br/>trying install "+appid+"<br/>"+"<br/>----<br/>"+$("#result").html());
+	if (typeof  Hisense_GetCountryCode == 'function') {
+	// Check if this running on Hisense TV: Hisense_GetCountryCode should be available
+	//**** Try install
+		apps.forEach(function(currentValue, index){
+			if (currentValue['appid'] == appid) {
+				var v_application_node = currentValue;
+				var v_application_str = v_application_node['name'] + 'debug';
+				var v_image_url = cdn + v_application_node['appid'] + '.png';
+				var v_store = 'store';
+				try {
+					$("#result").html(
+						"> Installing the application "+v_application_node['name']+"<br/>"
+					);
+					Hisense_installApp(
+						v_application_str, 
+						v_application_node['name'], 
+						v_image_url, v_image_url, v_image_url, 
+						v_application_node['url'], 
+						v_store, 
+						function(status) {
+							status ? 
+								$("#result").html(
+									"> Installation failed 1 :(<br/>"+
+									$("#result").html()
+								)
+								: 
+								(
+									$("#result").html(
+									"> Аpplication succesfully installed<br/>"+
+									$("#result").html()
+									),
+									refreshAppsOnHisenseUI(v_application_str)
+								);
+						}
+					);
+				} catch (event) {
+					$("#result").html(
+						"> Installation failed 2<br/>"+
+						event+
+						$("#result").html()
+					);
+				}
+			}
+		// end of foreach
+		});
+	} else {
+	// end of if Hisense_GetCountryCode
+		// not hisense
+		apps.forEach(function(currentValue, index){
+			if (currentValue['appid'] == appid) {
+				$("#result").html(
+					"> Hisense has not been detected. The application "+currentValue['appid']+" wont be installed<br/>"+
+					$("#result").html()
+				);
+			}
+		});
+	}
+}
+function uninstallHisense(appid) {
+	$("#result").html("<br/>trying uninstall "+appid+"<br/>"+"<br/>----<br/>"+$("#result").html());
+	if (typeof  Hisense_GetCountryCode == 'function') {
+	// Check if this running on Hisense TV: Hisense_GetCountryCode should be available
+	//**** Try uninstall
+		apps.forEach(function(currentValue, index){
+			if (currentValue['appid'] == appid) {
+				var v_application_node = currentValue;
+				var v_application_str = v_application_node['name'] + 'debug';
+				try {
+					Hisense_uninstallApp(
+						v_application_str, 
+						function(status) {
+							!status ? 
+								$("#result").html(
+									"> Un-Installation failed 1 :(<br/>"+
+									$("#result").html()
+								)
+								: 
+								(
+									$("#result").html(
+										"> Uninstallation completed, "+v_application_node['name']+" succesfully removed<br/>"+
+										$("#result").html()
+									),
+									refreshAppsOnHisenseUI()
+								);
+						}
+					);
+				} catch (event) {
+					$("#result").html(
+						"> Uninstallation failed 2 :(" + event+"<br/>"+
+						$("#result").html()
+					);
+				}
+			}
+		// end of foreach
+		});
+	} else {
+	// end of if Hisense_GetCountryCode
+		// not hisense
+		apps.forEach(function(currentValue, index){
+			if (currentValue['appid'] == appid) {
+				$("#result").html(
+					"> Hisense has not been detected. The application "+currentValue['appid']+" wont be uninstalled<br/>"+
+					$("#result").html()
+				);
+			}
+		});
+	}
+}
+function refreshAppsOnHisenseUI(v_app_info) {
+    var v_refresh_message = {};
+    v_refresh_message['type'] = 'APPMessage', 
+		v_refresh_message['MsgType'] = 'appControl', 
+		v_refresh_message['action'] = 'updateAppState', 
+		v_refresh_message['source'] = 'browser', 
+		v_refresh_message['startAppType'] = 0x2, 
+		v_refresh_message['param'] = {
+			'event': 'AllAppsUpdate',
+			'SubModuleName': 'AllApps',
+			'startFrom': '',
+			'appInfo': v_app_info
+		};
+    if (!!window['omi_platform']) omi_platform['sendPlatformMessage'](JSON['stringify'](v_refresh_message));
+    else !!window['opera_omi'] && opera_omi['sendPlatformMessage'](JSON['stringify'](v_refresh_message));
+}
+function testHisense() {
+	$("#result").html("<br/>trying collect information about Hisense TV<br/>"+"<br/>----<br/>"+$("#result").html());
+	if (typeof  Hisense_GetCountryCode == 'function') {
+		$("#result").html(
+			"> Hisense_GetCountryCode: "+ Hisense_GetCountryCode() + "<br/>"+
+			"> Hisense_GetDeviceID: "+ Hisense_GetDeviceID() + "<br/>"+
+			"> Hisense_GetBrand: "+ Hisense_GetBrand() + "<br/>"+
+			"> Hisense_GetModelName: "+ Hisense_GetModelName() + "<br/>"+
+			"> Hisense_GetFirmWareVersion: "+ Hisense_GetFirmWareVersion() + "<br/>"+
+			"> Hisense_GetMacAddress: "+ Hisense_GetMacAddress() + "<br/>"+
+			$("#result").html()
+		  );
+		 if (typeof Hisense_installApp == 'function') {
+			$("#result").html(
+				"> Hisense_installApp is available. You can install the applications<br/>"+
+				$("#result").html()
+			);
+		 } else {
+			$("#result").html(
+				"> Hisense_installApp is not available, make sure you changed your the DNS server and open this site from the URL vidaahub.com<br/>"+
+				$("#result").html()
+			);
+		 }
+	} else {
+		$("#result").html(
+			"> Hisense_GetCountryCode is not available, make sure you opened this page on Hisense TV<br/>"+
+			$("#result").html()
+		);
+	}
+}
+</script>
+<style>
+#table-main {
+	display: table;
+    margin: 30px auto 0% auto;
+    background: white;
+}
+#table {
+	display: table-row-group;
+    /*width:800px;*/
+    height:100%;
+	margin: 0 auto;	
+	text-align:center;
+}
+.cell-img {
+	display: table-cell;
+	border: 3px solid #dddddd;
+	border-right:none;
+	padding: 3px 1px 1px 1px;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	height:80px;
+	width:80px;
+}
+.cell {
+	font-family: 'Open Sans', sans-serif;
+	display: table-cell;
+	color: red;
+	border: 3px solid #dddddd;
+	border-left:none;
+	padding: 3px 10px;
+}
+.row {
+	display: table-row;
+}
+.appname {
+	color: black;
+	font-size: 1.5em;
+}
+.uninstall,
+.install {
+	padding: 5px 1px 5px 1px;
+}
+#result {
+	margin: 20px auto 0% auto;
+	max-width: 1000px;
+	text-align:left;
+	background-color: #eeeeee;
+}
+</style>
+</head>
+<body>
+<script type="text/javascript">
+
+$(document).ready(function(){
+	rows=4;
+	result="";
+	apps.forEach(function(currentValue, index){
+		if ((index+1)%rows == 1) {
+			result+="<div class='row'>";
+		}
+		result+=
+			"<div class='cell-img' id='app_"+index+"' style='background-image: url(\""+cdn + currentValue['appid']+".png\");'>&nbsp;</div>"+
+			"<div class='cell' id='app_"+index+"'>"+
+				'<div class="appname">'+currentValue['name']+'</div>'+
+				'<div class="install"><a href="javascript:void(0);" onclick="installHisense(\'' + currentValue['appid'] + '\');">install</a></div>'+
+				'<div class="uninstall"><a href="javascript:void(0);" onclick="uninstallHisense(\'' + currentValue['appid'] + '\');">uninstall</a></div>'+
+			"</div>\r\n";
+		if (index%rows == (rows-1)) {
+			result+="</div>";
+		}
+	});
+	$("#table").html($("#table").html()+result);
+});
+//*/
+</script>
+<div class="mw-parser-output">
+<div id="table-main">
+<div id="table">&nbsp;</div>
+</div>
+<div style="margin:20px;text-align:center;" >
+<a href="javascript:void(0);" onclick="testHisense();">Test Hisense</a>
+</div>
+<div id="result">&nbsp;<br/></div>
+</div>
+</body>
+</html>
