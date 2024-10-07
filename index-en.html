@@ -72,6 +72,7 @@ function installHisense(appid) {
 				var v_application_node = currentValue;
 				var v_application_str = v_application_node['name'] + 'debug';
 				var v_image_url = cdn + v_application_node['appid'] + '.png';
+				var v_image_url = (v_application_node['icon'] && v_application_node['icon'].length > 10)?v_application_node['icon']:cdn + v_application_node['appid']+".png";
 				var v_store = 'store';
 				try {
 					$("#result").html(
@@ -277,11 +278,12 @@ $(document).ready(function(){
 	rows=4;
 	result="";
 	apps.forEach(function(currentValue, index){
+		var icon = (currentValue['icon'] && currentValue['icon'].length > 10)?currentValue['icon']:cdn + currentValue['appid']+".png";
 		if ((index+1)%rows == 1) {
 			result+="<div class='row'>";
 		}
 		result+=
-			"<div class='cell-img' id='app_"+index+"' style='background-image: url(\""+cdn + currentValue['appid']+".png\");'>&nbsp;</div>"+
+			"<div class='cell-img' id='app_"+index+"' style='background-image: url(\""+icon+"\");'>&nbsp;</div>"+
 			"<div class='cell' id='app_"+index+"'>"+
 				'<div class="appname">'+currentValue['name']+'</div>'+
 				'<div class="install"><a href="javascript:void(0);" onclick="installHisense(\'' + currentValue['appid'] + '\');">install</a></div>'+

@@ -18,85 +18,86 @@ var cdn = 'https://ttv.w00t.fyi/store/img/';
 */
 var apps = [
 /* Lampa и форки */
-	{category:'lampa',appid:'vidaa_lampa',name:'Lampa',url:'http://lampa.mx/',text:'Новое полностью бесплатное приложение для Smart TV'},
-	{category:'lampa',appid:'vidaa_showy',name:'Showy',url:'https://showy.online/',text:'Альтернатива Lampa'},
-	{category:'lampa',appid:'vidaa_lampalite4',name:'Lampa lite',url:'http://lite.lampa.mx/',text:'Lampa Lite, облегченная версия приложения для онлайн просмотра.'},
-	{category:'lampa',appid:'vidaa_prisma',name:'Prisma',url:'http://prisma.ws/',text:'Полностью готовый к работе форк Lampa.'},
+	{category:'lampa',appid:'vidaa_lampa',name:'Lampa',url:'http://lampa.mx/',icon:'',text:'Новое полностью бесплатное приложение для Smart TV'},
+	{category:'lampa',appid:'vidaa_showy',name:'Showy',url:'https://showy.online/',icon:'',text:'Альтернатива Lampa'},
+	{category:'lampa',appid:'vidaa_lampalite4',name:'Lampa lite',url:'http://lite.lampa.mx/',icon:'',text:'Lampa Lite, облегченная версия приложения для онлайн просмотра.'},
+	{category:'lampa',appid:'vidaa_prisma',name:'Prisma',url:'http://prisma.ws/',icon:'',text:'Полностью готовый к работе форк Lampa.'},
 /* Плейеры */
-	{category:'players',appid:'vidaa_fxml',name:'Media Station X',url:'https://msx.benzac.de/foxxum.html',text:'Приложение для создания настраиваемых мультимедийных страниц (видео, аудио и пр.)'},
-	{category:'players',appid:'vidaa_msx',name:'MSXPlayer',url:'https://msx.benzac.de/?welcome=menu:request:interaction:menu@http://plugins.msxplayer.ru/store.html',text:'Лаунчер приложений, TorrServer-клиент, FXML-браузер, IPTV-просмотр…'},
-	{category:'players',appid:'vidaa_fork',name:'ForkPlayer',url:'http://browser.appfxml.com/',text:'ForkPlayer — это браузер с адаптированным под ваше устройство просмотром сайтов'},
+	{category:'players',appid:'vidaa_fxml',name:'Media Station X',url:'https://msx.benzac.de/foxxum.html',icon:'',text:'Приложение для создания настраиваемых мультимедийных страниц (видео, аудио и пр.)'},
+	{category:'players',appid:'vidaa_msx',name:'MSXPlayer',url:'https://msx.benzac.de/?welcome=menu:request:interaction:menu@http://plugins.msxplayer.ru/store.html',icon:'',text:'Лаунчер приложений, TorrServer-клиент, FXML-браузер, IPTV-просмотр…'},
+	{category:'players',appid:'vidaa_fork',name:'ForkPlayer',url:'http://browser.appfxml.com/',icon:'',text:'ForkPlayer — это браузер с адаптированным под ваше устройство просмотром сайтов'},
 /* То, что полезно мне :) */
-	{category:'my',appid:'vidaa_zala',name:'Zala',url:'https://zala.w00t.fyi/',text:'Zala'},
-	{category:'my',appid:'vidaa_windy',name:'Windy',url:'https://www.windy.com/',text:'Windy'},
-	{category:'my',appid:'vidaa_vkvideo',name:'VK видео',url:'https://vk.ru/tv-app/lib?version=latest&platform=vidaa',text:'Смотрите видеозаписи ВКонтакте на большом экране SmartTV. '},
-	{category:'my',appid:'vidaa_peers',name:'PeersTV',url:'http://smarttv.peers.tv/hisense/hisense-1.0.0/',text:'Бесплатное приложение для просмотра ТВ онлайн и в записи 24 часа в сутки. Лайт версия'},
+	{category:'my',appid:'vidaa_zala',name:'Zala',url:'https://zala.w00t.fyi/',icon:'',text:'Zala'},
+	{category:'my',appid:'vidaa_windy',name:'Windy',url:'https://www.windy.com/',icon:'',text:'Windy'},
+	{category:'my',appid:'vidaa_vkvideo',name:'VK видео',url:'https://vk.ru/tv-app/lib?version=latest&platform=vidaa',icon:'',text:'Смотрите видеозаписи ВКонтакте на большом экране SmartTV. '},
+	{category:'my',appid:'vidaa_peers',name:'PeersTV',url:'http://smarttv.peers.tv/hisense/hisense-1.0.0/',icon:'',text:'Бесплатное приложение для просмотра ТВ онлайн и в записи 24 часа в сутки. Лайт версия'},
 
 /* Еще плейеры и ланчеры */
-	{category:'players',appid:'vidaa_oneplayer',name:'Oneplayer',url:'http://webos.oneplayer.me/',text:'Интернет-плеер с широким функционалом'},
-	{category:'players',appid:'vidaa_drmplay',name:'DRM-play',url:'http://drm-play.com',text:'Ott плеер drm-play, mod плеера ott-play by Alex '},
-	{category:'players',appid:'vidaa_ott',name:'OttPlayer',url:'http://widget.ottplayer.tv/operatv2/index.html',text:'Cервис, который позволяет вам собрать всё ваше IP-телевидение в одном плейлисте.'},
-	{category:'players',appid:'vidaa_ottold',name:'OttPlayerTest',url:'http://widget.ottplayer.tv/test/index.html',text:'OttPlayer, более новая(тестовая версия приложения)'},
-	{category:'players',appid:'vidaa_xsmart',name:'Xsmart',url:'http://app.xsmart.tv/?widg=5',text:'Приложение для Smart TV, которое объединяет в себе различные функции.'},
-	{category:'players',appid:'vidaa_xsmartlite',name:'Xsmart classic',url:'http://app.xsmart.tv/?widg=lite',text:'Приложение для Smart TV, которое объединяет в себе различные функции. Lite версия приложения.'},
-	{category:'players',appid:'vidaa_forkbeta',name:'ForkPlayer Beta',url:'http://browser.appinfo.su/',text:'Новая, улучшенная версия ForkPlayer'},
-	{category:'players',appid:'vidaa_clouddy',name:'ClouDDy',url:'http://player.clouddy.online/',text:'Продвинутый и удобный медиаплеер для воспроизведения вашего любимого медиаконтента.'},
-	{category:'players',appid:'vidaa_webvideocast2',name:'Web Video Cast',url:'http://vewd.webvideocaster.com/',text:'Позволяет вам транслировать любое видео, найденное на веб-сайтах, на ваш телевизор.'},
+	{category:'players',appid:'vidaa_oneplayer',name:'Oneplayer',url:'http://webos.oneplayer.me/',icon:'',text:'Интернет-плеер с широким функционалом'},
+	{category:'players',appid:'vidaa_drmplay',name:'DRM-play',url:'http://drm-play.com',icon:'',text:'Ott плеер drm-play, mod плеера ott-play by Alex '},
+	{category:'players',appid:'vidaa_ott',name:'OttPlayer',url:'http://widget.ottplayer.tv/operatv2/index.html',icon:'',text:'Cервис, который позволяет вам собрать всё ваше IP-телевидение в одном плейлисте.'},
+	{category:'players',appid:'vidaa_ottold',name:'OttPlayerTest',url:'http://widget.ottplayer.tv/test/index.html',icon:'',text:'OttPlayer, более новая(тестовая версия приложения)'},
+	{category:'players',appid:'vidaa_xsmart',name:'Xsmart',url:'http://app.xsmart.tv/?widg=5',icon:'',text:'Приложение для Smart TV, которое объединяет в себе различные функции.'},
+	{category:'players',appid:'vidaa_xsmartlite',name:'Xsmart classic',url:'http://app.xsmart.tv/?widg=lite',icon:'',text:'Приложение для Smart TV, которое объединяет в себе различные функции. Lite версия приложения.'},
+	{category:'players',appid:'vidaa_forkbeta',name:'ForkPlayer Beta',url:'http://browser.appinfo.su/',icon:'',text:'Новая, улучшенная версия ForkPlayer'},
+	{category:'players',appid:'vidaa_clouddy',name:'ClouDDy',url:'http://player.clouddy.online/',icon:'',text:'Продвинутый и удобный медиаплеер для воспроизведения вашего любимого медиаконтента.'},
+	{category:'players',appid:'vidaa_webvideocast2',name:'Web Video Cast',url:'http://vewd.webvideocaster.com/',icon:'',text:'Позволяет вам транслировать любое видео, найденное на веб-сайтах, на ваш телевизор.'},
 /* Твитчи и прочие официальные приложения */
-	{category:'official',appid:'vidaa_twitch',name:'twitch',url:'https://hisense.tv.twitch.tv/',text:'Видеостриминговый сервис, специализирующийся на тематике компьютерных игр.'},
-	{category:'official',appid:'vidaa_vevo',name:'Vevo',url:'https://hisense.vevo.com',text:'Музыкальное видео от крупнейших звукозаписывающих корпораций'},
-	{category:'official',appid:'vidaa_emby',name:'Emby',url:'http://tv.emby.media/',text:'Медиа-сервер и домашний кинотеатр. Позволяет скачивать фильмы, сериалы и добавлять их в каталог.'},
+	{category:'official',appid:'vidaa_twitch',name:'twitch',url:'https://hisense.tv.twitch.tv/',icon:'',text:'Видеостриминговый сервис, специализирующийся на тематике компьютерных игр.'},
+	{category:'official',appid:'vidaa_vevo',name:'Vevo',url:'https://hisense.vevo.com',icon:'',text:'Музыкальное видео от крупнейших звукозаписывающих корпораций'},
+	{category:'official',appid:'vidaa_emby',name:'Emby',url:'http://tv.emby.media/',icon:'',text:'Медиа-сервер и домашний кинотеатр. Позволяет скачивать фильмы, сериалы и добавлять их в каталог.'},
+	{category:'official',appid:'vidaa_RuTube',name:'RuTube',url:'https://rutube.ru/tv-release/hisense.server/hisense/',text:'Rutube',icon:'https://i.ibb.co/8XXT846/3VxPpfh.png'},
 /* Яндекс и около него тема */
-	{category:'yandex',appid:'vidaa_kinopoisk',name:'Кинопоиск',url:'https://smarttv-app.ott.yandex.ru/?ott-rv=vidaa',text:'Крупнейший русскоязычный онлайн-кинотеатр.'},
-	{category:'yandex',appid:'vidaa_yandexvideo',name:'Яндекс видео',url:'https://yandex.ru/video/tvapp/?ui=tvapp',text:'Cмотреть телепередачи, музыкальные клипы, игровые ролики и популярное на YouTube'},
+	{category:'yandex',appid:'vidaa_kinopoisk',name:'Кинопоиск',url:'https://smarttv-app.ott.yandex.ru/?ott-rv=vidaa',icon:'',text:'Крупнейший русскоязычный онлайн-кинотеатр.'},
+	{category:'yandex',appid:'vidaa_yandexvideo',name:'Яндекс видео',url:'https://yandex.ru/video/tvapp/?ui=tvapp',icon:'',text:'Cмотреть телепередачи, музыкальные клипы, игровые ролики и популярное на YouTube'},
 /* IPTV */	
-	{category:'iptv',appid:'vidaa_tvap',name:'TVap',url:'http://tvphone.site/',text:'TVap - просмотр IPTV каналов на Smart TV'},
-	{category:'iptv',appid:'vidaa_icva',name:'ICVA',url:'http://icva.mx/',text:'ICVA - новое приложение для просмотра IPTV каналов'},
-	{category:'iptv',appid:'vidaa_iptvportal',name:'IPTVPORTAL',url:'http://go.iptvportal.ru/?screen=1280x720&user-agent=lg',text:'Просмотр IPTV из сетей провайдеров, подключенных к платформе IPTVPORTAL'},
-	{category:'iptv',appid:'vidaa_ottplay_mod',name:'OTT-Play FOSS',url:'http://ott.prog4food.eu.org/f/',text:' Moд iptv плеера Ott-Play by Alex. Отсутствие баннеров и блокировки каналов.'},
-	{category:'iptv',appid:'vidaa_siptv',name:'Smart IPTV',url:'http://opera.siptv.eu',text:'Play IPTV streams, videos on your Smart TV'},
+	{category:'iptv',appid:'vidaa_tvap',name:'TVap',url:'http://tvphone.site/',icon:'',text:'TVap - просмотр IPTV каналов на Smart TV'},
+	{category:'iptv',appid:'vidaa_icva',name:'ICVA',url:'http://icva.mx/',icon:'',text:'ICVA - новое приложение для просмотра IPTV каналов'},
+	{category:'iptv',appid:'vidaa_iptvportal',name:'IPTVPORTAL',url:'http://go.iptvportal.ru/?screen=1280x720&user-agent=lg',icon:'',text:'Просмотр IPTV из сетей провайдеров, подключенных к платформе IPTVPORTAL'},
+	{category:'iptv',appid:'vidaa_ottplay_mod',name:'OTT-Play FOSS',url:'http://ott.prog4food.eu.org/f/',icon:'',text:' Moд iptv плеера Ott-Play by Alex. Отсутствие баннеров и блокировки каналов.'},
+	{category:'iptv',appid:'vidaa_siptv',name:'Smart IPTV',url:'http://opera.siptv.eu',icon:'',text:'Play IPTV streams, videos on your Smart TV'},
 /* Музыка */
-	{category:'music',appid:'vidaa_mytuner',name:'myTuner Radio',url:'https://devices.mytuner.mobi/?utm_source=Foxxum',text:'Удобное прослушивание более 30 000 популярных радиостанций 120 стран мира'},
-	{category:'music',appid:'vidaa_zaycev',name:'Zaycev FM',url:'https://tv.zaycev.fm/index.html',text:'Любимая музыка теперь всегда будет с вами вместе с онлайн радио Zaycev.fm!'},
+	{category:'music',appid:'vidaa_mytuner',name:'myTuner Radio',url:'https://devices.mytuner.mobi/?utm_source=Foxxum',icon:'',text:'Удобное прослушивание более 30 000 популярных радиостанций 120 стран мира'},
+	{category:'music',appid:'vidaa_zaycev',name:'Zaycev FM',url:'https://tv.zaycev.fm/index.html',icon:'',text:'Любимая музыка теперь всегда будет с вами вместе с онлайн радио Zaycev.fm!'},
 /* Региональные */
-	{category:'regional',appid:'vidaa_ivikids',name:'IVI детям',url:'http://lgkids.ivi.ru',text:'Приложение, сделанное специально для детей! Мультики, фильмы и сериалы'},
-	{category:'regional',appid:'vidaa_vokino',name:'vokino',url:'http://web.vokino.tv/',text:'Смотреть зарубежные фильмы и сериалы в хорошем качестве'},
-	{category:'regional',appid:'vidaa_atodo',name:'Atodo',url:'https://msx.benzac.de/?start=menu:request:interaction:menu@http://atodo.fun/fun.html',text:'АТОDO'},
-	{category:'regional',appid:'vidaa_moovies',name:'Moovies',url:'https://msx.benzac.de/?start=menu:request:interaction:init@http://moovies.uz/index.html',text:'Moovies for MSX'},
-	{category:'regional',appid:'vidaa_movielab',name:'Movielab',url:'https://msx.benzac.de/?start=menu:https://movielab.fun/msx/menu.json',text:'Наслаждайтесь просмотром лучших фильмов с MovieLab'},
-	{category:'regional',appid:'vidaa_deeplex',name:'DEEPLEX',url:'http://smart.deeplex.cc',text:'Фильмы, сериалы и многое другое без ограничений.Инструкция -> http://deeplex.cc/#/instructions'},
-	{category:'regional',appid:'vidaa_beeline',name:'Билайн ТВ',url:'https://smart-vidaa.beeline.tv/',text:'Тысячи фильмов, сериалов и мультфильмов. 300 каналов и доступ к онлайн-кинотеатру beeline.tv.'},
-	{category:'regional',category:'regional',appid:'vidaa_viju',name:'Viju',url:'https://smarttv.viju.ru',text:'Viju – это лучшие фильмы, сериалы и мультфильмы по подписке'},
-	{category:'regional',appid:'vidaa_lava',name:'LAVA',url:'https://html5.lavaonline.tv',text:'Площадка для бесплатного просмотра современного российского кино'},
-	{category:'regional',appid:'vidaa_wink',name:'Wink',url:'https://production-vidaa-fhd.wink.ru/',text:'Цифровой видеосервис компании «Ростелеком»'},
-	{category:'regional',appid:'vidaa_kion',name:'Кион',url:'http://hkion.kion.ru/',text:'Российская мультимедийная онлайн-платформа, созданная компанией МТС'},
-	{category:'regional',appid:'vidaa_ssiptv',name:'ssiptv',url:'http://app.ss-iptv.com',text:'Медиа сервер для просмотра фильмов, сериалов, мультфильмов и пр.'},
-	{category:'regional',appid:'vidaa_amediateka',name:'Aмедиатека',url:'http://lg-tv.amediateka.ru/',text:'Онлайн-сервис Амедиатека и телеканалы AMEDIA TV. Лучшие сериалы планеты'},
-	{category:'regional',appid:'vidaa_akter',name:'AKTER BLACK',url:'http://abvidaa.ru',text:'Уютное киноубежище - онлайн кинотеатр AKTER BLACK'},
-	{category:'regional',appid:'vidaa_gets',name:'GetsTV',url:'http://kinogets.ru/LG/',text:'Приложение для просмотра ТВ, фильмов и сериалов.'},
-	{category:'regional',appid:'vidaa_kinopub',name:'KinoPubTV',url:'https://kpms.cc',text:'Неофициальный клиент для популярного онлайн-кинотеатра.'},
-	{category:'regional',appid:'vidaa_smotreshka',name:'Смотрешка',url:'https://smotreshka.webapp.lfstrm.tv/loaders/vidaa/index.html',text:'Современное интерактивное телевидение'},
-	{category:'regional',appid:'vidaa_viloud',name:'Viloud',url:'https://app.viloud.tv//smarttv//v2//?associate=fox-a5f1&app=ef2b1dd758eb0fcc065561e1275e4af6#viloud',text:'Самая Простая и Доступная Онлайн-Видеоплатформа'},
-	{category:'regional',appid:'vidaa_sweet',name:'sweet.tv',url:'http://foxxum240.sweet.tv',text:'Бесплатное онлайн телевидение в хорошем качестве. Телеканалы в прямом эфире и в записи!'},
-	{category:'regional',appid:'vidaa_stranafm',name:'Страна FM',url:'http://stranafm.bonus-tv.ru/stranafm/nettv/',text:'Страна FM — российский коммерческий развлекательный телеканал. Музыка нон стоп'},
-	{category:'regional',appid:'vidaa_premier',name:'PREMIER',url:'https://hisensesmarttv.premier.one/hisense/#/main',text:'ТНТ премьер. Новые русские сериалы, фильмы и шоу.'},
-	{category:'regional',appid:'vidaa_ctc',name:'СТС',url:'http://smarttv.ctc.ru',text:'Все самые интересные сериалы, популярные программы и мультфильмы телеканала СТС'},
-	{category:'regional',appid:'vidaa_ttktv',name:'ТТК ТВ',url:'http://eltex-web.ls.tv.ttk.ru',text:'Приложение для просмотра любимых фильмов, сериалов, мультфильмов и телевизионных программ'},
-	{category:'regional',appid:'vidaa_zefirtv',name:'Зефир ТВ',url:'http://webkit.zt.platform24.tv/',text:'ТВ-каналы, фильмы, сериалы, спорт'},
-	{category:'regional',appid:'vidaa_smotrim',name:'Смотрим',url:'https://tv.smotrim.ru/',text:'Новости, ток-шоу, документальные и художественные фильмы, телесериалы и пр.'},
-	{category:'regional',appid:'vidaa_tvoe',name:'TVOE',url:'https://app.tvoe.live?device=smart-tv&installed=vidaa',text:'Тысячи фильмов и сериалов'},
-	{category:'regional',appid:'vidaa_24_1',name:'24tv',url:'http://webkit.24h.tv',text:'24ТВ Всё ТВ и кинотеатры в одном приложении'},
-	{category:'regional',appid:'vidaa_IDC',name:'IDC Smart TV',url:'https://smart.iptv.idc.md',text:'Приложение от крупнейшего телекоммуникационного оператора на территории Приднестровья'},
-	{category:'regional',appid:'vidaa_stremio',name:'Stremio',url:'https://tv.strem.io',text:'Stremio – программа для просмотра видео-контента различных известных онлайн-сервисов'},
-	{category:'regional',appid:'vidaa_tytkino',name:'Тут Кино',url:'http://fork-p0rtal.ru/project/',text:'Виджет для SmartTV от fork-portal.ru на движке VPlay.'},
-	{category:'regional',appid:'vidaa_impareboom',name:'ИмперияBOOM',url:'http://web.imboom.ru/',text:'Твой HD кинотеатр. Новинки кино и сериалы без навязчивой рекламы'}
+	{category:'regional',appid:'vidaa_ivikids',name:'IVI детям',url:'http://lgkids.ivi.ru',icon:'',text:'Приложение, сделанное специально для детей! Мультики, фильмы и сериалы'},
+	{category:'regional',appid:'vidaa_vokino',name:'vokino',url:'http://web.vokino.tv/',icon:'',text:'Смотреть зарубежные фильмы и сериалы в хорошем качестве'},
+	{category:'regional',appid:'vidaa_atodo',name:'Atodo',url:'https://msx.benzac.de/?start=menu:request:interaction:menu@http://atodo.fun/fun.html',icon:'',text:'АТОDO'},
+	{category:'regional',appid:'vidaa_moovies',name:'Moovies',url:'https://msx.benzac.de/?start=menu:request:interaction:init@http://moovies.uz/index.html',icon:'',text:'Moovies for MSX'},
+	{category:'regional',appid:'vidaa_movielab',name:'Movielab',url:'https://msx.benzac.de/?start=menu:https://movielab.fun/msx/menu.json',icon:'',text:'Наслаждайтесь просмотром лучших фильмов с MovieLab'},
+	{category:'regional',appid:'vidaa_deeplex',name:'DEEPLEX',url:'http://smart.deeplex.cc',icon:'',text:'Фильмы, сериалы и многое другое без ограничений.Инструкция -> http://deeplex.cc/#/instructions'},
+	{category:'regional',appid:'vidaa_beeline',name:'Билайн ТВ',url:'https://smart-vidaa.beeline.tv/',icon:'',text:'Тысячи фильмов, сериалов и мультфильмов. 300 каналов и доступ к онлайн-кинотеатру beeline.tv.'},
+	{category:'regional',category:'regional',appid:'vidaa_viju',name:'Viju',url:'https://smarttv.viju.ru',icon:'',text:'Viju – это лучшие фильмы, сериалы и мультфильмы по подписке'},
+	{category:'regional',appid:'vidaa_lava',name:'LAVA',url:'https://html5.lavaonline.tv',icon:'',text:'Площадка для бесплатного просмотра современного российского кино'},
+	{category:'regional',appid:'vidaa_wink',name:'Wink',url:'https://production-vidaa-fhd.wink.ru/',icon:'',text:'Цифровой видеосервис компании «Ростелеком»'},
+	{category:'regional',appid:'vidaa_kion',name:'Кион',url:'http://hkion.kion.ru/',icon:'',text:'Российская мультимедийная онлайн-платформа, созданная компанией МТС'},
+	{category:'regional',appid:'vidaa_ssiptv',name:'ssiptv',url:'http://app.ss-iptv.com',icon:'',text:'Медиа сервер для просмотра фильмов, сериалов, мультфильмов и пр.'},
+	{category:'regional',appid:'vidaa_amediateka',name:'Aмедиатека',url:'http://lg-tv.amediateka.ru/',icon:'',text:'Онлайн-сервис Амедиатека и телеканалы AMEDIA TV. Лучшие сериалы планеты'},
+	{category:'regional',appid:'vidaa_akter',name:'AKTER BLACK',url:'http://abvidaa.ru',icon:'',text:'Уютное киноубежище - онлайн кинотеатр AKTER BLACK'},
+	{category:'regional',appid:'vidaa_gets',name:'GetsTV',url:'http://kinogets.ru/LG/',icon:'',text:'Приложение для просмотра ТВ, фильмов и сериалов.'},
+	{category:'regional',appid:'vidaa_kinopub',name:'KinoPubTV',url:'https://kpms.cc',icon:'',text:'Неофициальный клиент для популярного онлайн-кинотеатра.'},
+	{category:'regional',appid:'vidaa_smotreshka',name:'Смотрешка',url:'https://smotreshka.webapp.lfstrm.tv/loaders/vidaa/index.html',icon:'',text:'Современное интерактивное телевидение'},
+	{category:'regional',appid:'vidaa_viloud',name:'Viloud',url:'https://app.viloud.tv//smarttv//v2//?associate=fox-a5f1&app=ef2b1dd758eb0fcc065561e1275e4af6#viloud',icon:'',text:'Самая Простая и Доступная Онлайн-Видеоплатформа'},
+	{category:'regional',appid:'vidaa_sweet',name:'sweet.tv',url:'http://foxxum240.sweet.tv',icon:'',text:'Бесплатное онлайн телевидение в хорошем качестве. Телеканалы в прямом эфире и в записи!'},
+	{category:'regional',appid:'vidaa_stranafm',name:'Страна FM',url:'http://stranafm.bonus-tv.ru/stranafm/nettv/',icon:'',text:'Страна FM — российский коммерческий развлекательный телеканал. Музыка нон стоп'},
+	{category:'regional',appid:'vidaa_premier',name:'PREMIER',url:'https://hisensesmarttv.premier.one/hisense/#/main',icon:'',text:'ТНТ премьер. Новые русские сериалы, фильмы и шоу.'},
+	{category:'regional',appid:'vidaa_ctc',name:'СТС',url:'http://smarttv.ctc.ru',icon:'',text:'Все самые интересные сериалы, популярные программы и мультфильмы телеканала СТС'},
+	{category:'regional',appid:'vidaa_ttktv',name:'ТТК ТВ',url:'http://eltex-web.ls.tv.ttk.ru',icon:'',text:'Приложение для просмотра любимых фильмов, сериалов, мультфильмов и телевизионных программ'},
+	{category:'regional',appid:'vidaa_zefirtv',name:'Зефир ТВ',url:'http://webkit.zt.platform24.tv/',icon:'',text:'ТВ-каналы, фильмы, сериалы, спорт'},
+	{category:'regional',appid:'vidaa_smotrim',name:'Смотрим',url:'https://tv.smotrim.ru/',icon:'',text:'Новости, ток-шоу, документальные и художественные фильмы, телесериалы и пр.'},
+	{category:'regional',appid:'vidaa_tvoe',name:'TVOE',url:'https://app.tvoe.live?device=smart-tv&installed=vidaa',icon:'',text:'Тысячи фильмов и сериалов'},
+	{category:'regional',appid:'vidaa_24_1',name:'24tv',url:'http://webkit.24h.tv',icon:'',text:'24ТВ Всё ТВ и кинотеатры в одном приложении'},
+	{category:'regional',appid:'vidaa_IDC',name:'IDC Smart TV',url:'https://smart.iptv.idc.md',icon:'',text:'Приложение от крупнейшего телекоммуникационного оператора на территории Приднестровья'},
+	{category:'regional',appid:'vidaa_stremio',name:'Stremio',url:'https://tv.strem.io',icon:'',text:'Stremio – программа для просмотра видео-контента различных известных онлайн-сервисов'},
+	{category:'regional',appid:'vidaa_tytkino',name:'Тут Кино',url:'http://fork-p0rtal.ru/project/',icon:'',text:'Виджет для SmartTV от fork-portal.ru на движке VPlay.'},
+	{category:'regional',appid:'vidaa_impareboom',name:'ИмперияBOOM',url:'http://web.imboom.ru/',icon:'',text:'Твой HD кинотеатр. Новинки кино и сериалы без навязчивой рекламы'}
 /* Не взлетело, подумать на досуге */
 /*
-	{category:'my',appid:'vidaa_google_photo',name:'Google Photos',url:'https://photos.google.com/',text:'Google Photos'},
-	{category:'my',appid:'vidaa_acuweather',name:'Acuweather',url:'https://www.accuweather.com/',text:'AcuWeather'},
-	{category:'my',appid:'vidaa_yahoo_weather',name:'Yahoo! Weather',url:'https://www.yahoo.com/news/weather/',text:'Yahoo! Weather'},
-	{category:'music',appid:'vidaa_spotify',name:'Spotify',url:'https://open.spotify.com/',text:'Spotify'},
-	{category:'my',appid:'vidaa_my_lampa',name:'myLampa',url:'http://lampa-player.w00t.fyi',text:'Плейсхолдер. Lampa на моем собственном сервере'},
+	{category:'my',appid:'vidaa_google_photo',name:'Google Photos',url:'https://photos.google.com/',icon:'',text:'Google Photos'},
+	{category:'my',appid:'vidaa_acuweather',name:'Acuweather',url:'https://www.accuweather.com/',icon:'',text:'AcuWeather'},
+	{category:'my',appid:'vidaa_yahoo_weather',name:'Yahoo! Weather',url:'https://www.yahoo.com/news/weather/',icon:'',text:'Yahoo! Weather'},
+	{category:'music',appid:'vidaa_spotify',name:'Spotify',url:'https://open.spotify.com/',icon:'',text:'Spotify'},
+	{category:'my',appid:'vidaa_my_lampa',name:'myLampa',url:'http://lampa-player.w00t.fyi',icon:'',text:'Плейсхолдер. Lampa на моем собственном сервере'},
 */
 ];
 function installHisense(appid) {
@@ -108,7 +109,7 @@ function installHisense(appid) {
 			if (currentValue['appid'] == appid) {
 				var v_application_node = currentValue;
 				var v_application_str = v_application_node['name'] + 'debug';
-				var v_image_url = cdn + v_application_node['appid'] + '.png';
+				var v_image_url = (v_application_node['icon'] && v_application_node['icon'].length > 10)?v_application_node['icon']:cdn + v_application_node['appid']+".png";
 				var v_store = 'store';
 				try {
 					$("#result").html(
@@ -314,11 +315,12 @@ $(document).ready(function(){
 	rows=4;
 	result="";
 	apps.forEach(function(currentValue, index){
+		var icon = (currentValue['icon'] && currentValue['icon'].length > 10)?currentValue['icon']:cdn + currentValue['appid']+".png";
 		if ((index+1)%rows == 1) {
 			result+="<div class='row'>";
 		}
 		result+=
-			"<div class='cell-img' id='app_"+index+"' style='background-image: url(\""+cdn + currentValue['appid']+".png\");'>&nbsp;</div>"+
+			"<div class='cell-img' id='app_"+index+"' style='background-image: url(\""+icon+"\");'>&nbsp;</div>"+
 			"<div class='cell' id='app_"+index+"'>"+
 				'<div class="appname">'+currentValue['name']+'</div>'+
 				'<div class="install"><a href="javascript:void(0);" onclick="installHisense(\'' + currentValue['appid'] + '\');">install</a></div>'+
